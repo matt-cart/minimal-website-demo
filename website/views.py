@@ -2,6 +2,7 @@ from flask import render_template
 
 from website import app
 
+
 @app.route('/')
 def index():
     return render_template('home_page.html')
@@ -9,4 +10,4 @@ def index():
 
 @app.route('/<name>')
 def print_name(name):
-	return name
+	return render_template('name.html', name=name)
